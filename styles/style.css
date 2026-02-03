@@ -76,10 +76,12 @@
   list-style-type: circle;
   font-size: 13px;
   line-height: 13px;
+  margin-top: 0px;
 }
 
 .product-cart__text {
-  margin-left: -18px;
+  font-size: 13px;
+  margin-left: 25px;
 }
 
 .product-cart__item {
