@@ -111,23 +111,24 @@
 
 .buttons {
   position: absolute;
+  margin-right: 0;
+  display:flex;
+  gap: 5px;
 }
 
 #recolor-button {
-  padding: 15px 28px;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-top: 10px;
   border: none;
   border-radius: 8px;
+  background-color: #481e04;
+  color: white;
   cursor: pointer;
   transition: background-color 1.5s ease;
 }
 
-.brown-color-button {
-  background-color: #481e04;
-  color: white;
-}
-
-.aqua-color-button{
+#recolor-button.aqua-color-button{
   background-color: #00ffff;
   color: #000000;
 }
