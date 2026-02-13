@@ -13,7 +13,7 @@ console.log(result);
     если ниже — "Субсветовая  скорость"? если равна — "Скорость света" */
 
 const LIGHT_OF_SPEED = 299792458;
-const getLightSpeedValue = score => {
+const defineLightSpeed = score => {
   if (score > LIGHT_OF_SPEED) {
     console.log('Сверхсветовая скорость');
   }
@@ -24,7 +24,7 @@ const getLightSpeedValue = score => {
     console.log('Скорость света');
   };
 };
-getLightSpeedValue (299792458);
+defineLightSpeed(299792458);
 
 
 /* 5. Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение).
@@ -35,7 +35,7 @@ getLightSpeedValue (299792458);
 
 const prodactName = 'Хлеб';
 const prodactPrice = 50;
-const checkMoney = budjet => {
+const makePurchase = budjet => {
   if (budjet >= prodactName) {
     console.log(`${prodactName} 'приобретен. Спасибо за покупку!'`);
   }
@@ -44,7 +44,7 @@ const checkMoney = budjet => {
     console.log(`Вам не хватает ${totalSum}$, пополните баланс`);
   };
 };
-checkMoney(49);
+makePurchase(49);
 
 
 /* 6. Создать 1 функцию и именовать её по своему усмотрению */
@@ -56,6 +56,6 @@ function showItemSize(height, weight) {
 
 /* 7. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению */
 
-const WindDirection = 'Северный';
+const windDirection = 'Северный';
 let maxCount = 99;
 let homeAddress;
