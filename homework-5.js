@@ -33,14 +33,14 @@ defineLightSpeed(299792458);
       если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
       То-есть с помощью функции мы пытаемся приобрести товар. */
 
-const prodactName = 'Хлеб';
-const prodactPrice = 50;
+const productName = 'Хлеб';
+const productPrice = 50;
 const makePurchase = budjet => {
-  if (budjet >= prodactName) {
-    console.log(`${prodactName} 'приобретен. Спасибо за покупку!'`);
+  if (budjet >= productName) {
+    console.log(`${productName} 'приобретен. Спасибо за покупку!'`);
   }
   else {
-    const totalSum = prodactPrice - budjet;
+    const totalSum = productPrice - budjet;
     console.log(`Вам не хватает ${totalSum}$, пополните баланс`);
   };
 };
