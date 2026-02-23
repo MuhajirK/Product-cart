@@ -30,12 +30,12 @@ car.owner = person;
 /* 5. Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
  Она проверяет, есть ли в объекте свойство "максимальная скорость" */
 
-const haveMaxSpeed = carObject => {
-  if (carObject.maxSpeed === undefined){
-    carObject.maxSpeed = 250
+const addMaxSpeed = carObject => {
+  if (carObject.maxSpeed === undefined) {
+    carObject.maxSpeed = 250;
   };
 };
-haveMaxSpeed(car);
+addMaxSpeed(car);
 
 
 /* 6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта */
@@ -53,40 +53,37 @@ const products = ['творог','молоко','йогурт','сметана']
 
 /* 8. Создать массив, состоящий из объектов, где объект представляет собой книгу и добавить еще одну книгу в конец списка.*/
 
-const masterAndMargarita = {
-  name: "Мастер и Маргарита",
-  author: "Михаил Булгаков",
-  releaseDate: 1966,
-  coverColor: "Тёмно‑зелёная",
-  genre: "Роман"
-};
-
-const lordOfRings = {
-  name: "Властелин колец",
-  author: "Джон Р. Р. Толкин",
-  releaseDate: 1954,
-  coverColor: "Тёмно‑зелёная",
-  genre: "Фэнтези"
-};
-
-const littlePrince = {
-  name: "Маленький принц",
-  author: "Антуан де Сент‑Экзюпери",
-  releaseDate: 1943,
-  coverColor: "Желтая",
-  genre: "Сказка"
-};
-
-const threeСomrades = {
-  name: "Три товарища",
-  author: "Эрих Мария Ремарк",
-  releaseDate: 1936,
-  coverColor: "Серая",
-  genre: "Роман"
-};
-
-const books = [masterAndMargarita, lordOfRings, littlePrince, threeСomrades];
-books.push(Duna= {
+const books = [
+  {
+    name: "Мастер и Маргарита",
+    author: "Михаил Булгаков",
+    releaseDate: 1966,
+    coverColor: "Тёмно‑зелёная",
+    genre: "Роман"
+  },
+  {
+    name: "Властелин колец",
+    author: "Джон Р. Р. Толкин",
+    releaseDate: 1954,
+    coverColor: "Тёмно‑зелёная",
+    genre: "Фэнтези"
+  },
+  {
+    name: "Маленький принц",
+    author: "Антуан де Сент‑Экзюпери",
+    releaseDate: 1943,
+    coverColor: "Желтая",
+    genre: "Сказка"
+  },
+  {
+    name: "Три товарища",
+    author: "Эрих Мария Ремарк",
+    releaseDate: 1936,
+    coverColor: "Серая",
+    genre: "Роман"
+  }
+];
+books.push({
   name: "Дюна",
   author: "Фрэнк Герберт",
   releaseDate: 1965,
@@ -97,42 +94,39 @@ books.push(Duna= {
 
 /* 9. Создать еще один массив, состоящих из книг, но относящийся к определенной вселенной и объединить эти два массива в один */
 
-const  fellowshipOfRing = {
-  name: "Братство кольца",
-  author: "Джон Р. Р. Толкин",
-  releaseDate: 1986,
-  coverColor: "Тёмно‑зелёная",
-  genre: "Фэнтези"
-};
-
-const twoTowers = {
-  name: "Две крепости",
-  author: "Джон Р. Р. Толкин",
-  releaseDate: 2008,
-  coverColor: "Серая",
-  genre: "Фэнтези"
-};
-
-const returnOfKing = {
-  name: "Возвращение короля",
-  author: "Джон Р. Р. Толкин",
-  releaseDate: 2001,
-  coverColor: "Желтая",
-  genre: "Фэнтези"
-};
-
-const universeTolkin = [fellowshipOfRing, twoTowers, returnOfKing];
+const universeTolkin = [
+  {
+    name: "Братство кольца",
+    author: "Джон Р. Р. Толкин",
+    releaseDate: 1986,
+    coverColor: "Тёмно‑зелёная",
+    genre: "Фэнтези"
+  },
+  {
+    name: "Две крепости",
+    author: "Джон Р. Р. Толкин",
+    releaseDate: 2008,
+    coverColor: "Серая",
+    genre: "Фэнтези"
+  },
+  {
+    name: "Возвращение короля",
+    author: "Джон Р. Р. Толкин",
+    releaseDate: 2001,
+    coverColor: "Желтая",
+    genre: "Фэнтези"
+  }
+];
 const combineBooksArray = [...books, ...universeTolkin];
 
 
 /* 10. Используя метод массива — map написать функцию, которая принимает массив сущностей с задания №9.
 Добавляем новое свойство для объекта "isRare (это редкий)" в зависимости от года выпуска книги */
 
-function addRareProperty(allBooks) {
-  return allBooks.map(book =>
-    Object.assign({}, book, {
-      isRare: book.releaseDate < 2000
-    })
-  );
+function getRareProperty(allBooks) {
+  return allBooks.map(book => {
+    const year = book.releaseDate;
+    year < 2000 ? isRare = true : isRare = false;
+    return {...book, isRare};
+  });
 };
-console.log(addRareProperty(combineBooksArray));
