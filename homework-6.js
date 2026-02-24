@@ -123,10 +123,9 @@ const combineBooksArray = [...books, ...universeTolkin];
 /* 10. Используя метод массива — map написать функцию, которая принимает массив сущностей с задания №9.
 Добавляем новое свойство для объекта "isRare (это редкий)" в зависимости от года выпуска книги */
 
-function getRareProperty(allBooks) {
-  return allBooks.map(book => {
-    const year = book.releaseDate;
-    year < 2000 ? isRare = true : isRare = false;
-    return {...book, isRare};
-  });
+function addIsRareProperty(allBooks) {
+  return allBooks.map(book => ({
+    ...book, isRare: book.releaseDate < 2000
+  }));
 };
+addIsRareProperty(combineBooksArray);
