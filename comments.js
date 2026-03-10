@@ -1,7 +1,7 @@
 /* 5. Создать константу и в него поместить первые 10 объектов массива (https://jsonplaceholder.typicode.com/comments)
    6. Сделать константу экспортируемой*/
 
-export const usersPosts = [
+export const comments = [
   {
     postId: 1,
     id: 1,
@@ -72,4 +72,4 @@ export const usersPosts = [
     email: "Carmen_Keeling@caroline.name",
     body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
   }
-]
+];
