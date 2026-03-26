@@ -3,11 +3,10 @@ import { productCards } from "./product-cards.js";
 
 /* 4. Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание */
 
-const productTitleAndDecription = productCards.reduce((acc, product) => {
+const productsDescriptionsByTitle = productCards.reduce((acc, product) => {
   acc[product.title] = product.description;
   return acc;
 }, []);
-console.log(productTitleAndDecription)
 
 
 /* 5. Реализовать функцию, которая при старте страницы выводит сообщение для ввода,
@@ -15,7 +14,6 @@ console.log(productTitleAndDecription)
 
 const productContainer = document.querySelector('.product-cart-wrapper');
 const productTemplate = document.getElementById('product-card-template');
-
 function getCardCount() {
   let userInput = prompt('Сколько карточек отобразить? От 1 до 5');
   let resaultNumber = Number(userInput);
@@ -30,7 +28,6 @@ function getCardCount() {
 /* 3, 5. Реализовать функцию создания шаблона для вывода продуктовых карточек */
 
 const productsToRender = productCards.slice(0, getCardCount());
-renderProductCards(productsToRender);
 function renderProductCards(products) {
   products.forEach(product => {
   const productClone = productTemplate.content.cloneNode(true);
@@ -49,3 +46,4 @@ function renderProductCards(products) {
     productContainer.appendChild(productClone);
   });
 }; 
+renderProductCards(productsToRender);
