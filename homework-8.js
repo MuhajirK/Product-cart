@@ -1,12 +1,13 @@
-import { productInfo } from "./product-cards.js";
+import { productCards } from "./product-cards.js";
 
 
 /* 4. Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание */
 
-const productTitleAndDecription = productInfo.reduce((acc, product) => {
+const productTitleAndDecription = productCards.reduce((acc, product) => {
   acc[product.title] = product.description;
   return acc;
-}, {});
+}, []);
+console.log(productTitleAndDecription)
 
 
 /* 5. Реализовать функцию, которая при старте страницы выводит сообщение для ввода,
@@ -28,23 +29,23 @@ function getCardCount() {
 
 /* 3, 5. Реализовать функцию создания шаблона для вывода продуктовых карточек */
 
-function renderProductCards(products, cardCount) {
-  const productsToRender = products.slice(0, cardCount);
-  productsToRender.forEach(product => {
-    const productClone = productTemplate.content.cloneNode(true);
-    productClone.querySelector('.product-cart__image').src = "images/" + product.image + ".png";
-    productClone.querySelector('.product-cart__image').alt = product.alt;
-    productClone.querySelector('.product-cart__title').textContent = product.title;
-    productClone.querySelector('.product-cart__descr').textContent = product.description;
-    productClone.querySelector('.product-cart__price-value').textContent = product.price;
-    const compositionList = productClone.querySelector('.product-cart__composition');
+const productsToRender = productCards.slice(0, getCardCount());
+renderProductCards(productsToRender);
+function renderProductCards(products) {
+  products.forEach(product => {
+  const productClone = productTemplate.content.cloneNode(true);
+  productClone.querySelector('.product-cart__image').src = "images/" + product.image + ".png";
+  productClone.querySelector('.product-cart__image').alt = product.title;
+  productClone.querySelector('.product-cart__title').textContent = product.title;
+  productClone.querySelector('.product-cart__descr').textContent = product.description;
+  productClone.querySelector('.product-cart__price-value').textContent = `${product.price} ₽`;
+  const compositionList = productClone.querySelector('.product-cart__composition');
     product.composition.forEach(item => {
       const li = document.createElement('li');
       li.className = 'product-cart__item';
-      li.textContent = item;
+        li.textContent = item;
       compositionList.appendChild(li);
     });
     productContainer.appendChild(productClone);
   });
-};
-renderProductCards(productInfo, getCardCount());
+}; 

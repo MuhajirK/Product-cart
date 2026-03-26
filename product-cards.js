@@ -1,21 +1,19 @@
 /* 2. Создаем файл js, где будет хранится массив объектов, которые представляют собой продуктовые карточки из вёрстки */ 
 
-export const productInfo = [
+export const productCards = [
   {
     image: 'moisturizing_mousse',
-    alt: 'Увлажняющий мусс',
     title: 'Увлажняющий мусс',
-    description: 'Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.',
+    description: 'Глубоко увлажняет кожу лица, оставляя её мягкой и гладкой.',
     composition: [
       'активные натуральные комплексы',
       'витамины С, А, РР, В И Е',
       'солнцезащитные компоненты'
     ],
-    price: '2 750 ₽'
+    price: 2750
   },
   {
     image: 'moisturizing_mask',
-    alt: 'Увлажняющая маска',
     title: 'Увлажняющий маска',
     description: 'Способствует удерживанию влаги в верхних слоях кожи.',
     composition: [
@@ -23,11 +21,10 @@ export const productInfo = [
       'минералы',
       'масла'
     ],
-    price: '3 500 ₽'
+    price: 3500
   },
   {
     image: 'cleansing_gel',
-    alt: 'Гель для умывания',
     title: 'Гель для умывания',
     description: 'Интенсивно очищает, не повреждает защитный барьер кожи.',
     composition: [
@@ -35,11 +32,10 @@ export const productInfo = [
       'витамины С, А, РР, В И Е',
       'солнцезащитные компоненты'
     ],
-    price: '1 650 ₽'
+    price: 1650
   },
   {
     image: 'gift_set_one',
-    alt: 'Подарочный набор №1',
     title: 'Подарочный набор №1',
     description: 'Набор, состоящий из увлажняющего крема и маски.',
     composition: [
@@ -47,11 +43,10 @@ export const productInfo = [
       'минералы',
       'масла'
     ],
-    price: '4 750 ₽'
+    price: 4750
   },
   {
     image: 'gift_set_five',
-    alt: 'Подарочный набор №5',
     title: 'Подарочный набор №5',
     description: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',
     composition: [
@@ -59,6 +54,6 @@ export const productInfo = [
       'минералы',
       'масла'
     ],
-    price: '7 520 ₽'
+    price: 7520
   }
 ];
