@@ -40,7 +40,7 @@ function renderProductCards(products) {
     product.composition.forEach(item => {
       const li = document.createElement('li');
       li.className = 'product-cart__item';
-        li.textContent = item;
+      li.textContent = item;
       compositionList.appendChild(li);
     });
     productContainer.appendChild(productClone);
