@@ -79,5 +79,5 @@ const emailsWithMap = comments.map(comment => comment.email);
 
 /* 12.перебрав массив с задания №11, привести его к строке при помощи методов toString() и join()*/
 
-const emailsByToString = eMailsWithReduce.toString();
-const emailsByJoin = eMailsWithReduce.join(", ");
+const emailsByToString = emailsWithReduce.toString();
+const emailsByJoin = emailsWithReduce.join(", ");
