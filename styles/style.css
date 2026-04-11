@@ -227,7 +227,7 @@ margin-top: 10px;
   color: white;
   bottom: 130px;
   left: 550px;
-  max-width: 415px;
+  max-width: 200px;
   width: 100%;
   gap: 10px;
 
@@ -246,6 +246,7 @@ margin-top: 10px;
   gap: 15px;
   list-style: none;
   font-size: 18px;
+  padding-left: 1px;
 }
 
 .footer-menu-link {

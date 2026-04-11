@@ -28,6 +28,7 @@ const closeForm = closeBtn.addEventListener('click', ()=> {
 const passwordInput= document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 const regForm = document.querySelector(".registration-form");
+let user;
 
 regForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -38,14 +39,12 @@ regForm.addEventListener('submit', (event) => {
     alert("Проверьте корректность заполнения полей!");
     return;
   };
-  let userPassword = formData.get("password");
-  let confirmPassword = formData.get("confirm-password");
-  if (userPassword === confirmPassword) {
+  console.log(formValues["confirm-password"], formValues.password);
+  if (formValues["confirm-password"] === formValues.password) {
     modal.classList.remove("modal-show");
-    user = {
-      ...formValues,
-      createdOn: new Date().toLocaleDateString()
-    };
+    currentDate = new Date().toLocaleDateString();
+    const { ...userData} = formValues;
+    user = userData;
     console.log(user);
     regForm.reset();
   }
@@ -54,6 +53,7 @@ regForm.addEventListener('submit', (event) => {
     passwordInput.value = "";
     confirmPasswordInput.value = "";
   };
+
 });
 
 
