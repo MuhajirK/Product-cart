@@ -1,38 +1,41 @@
 * {
   font-family: 'montserrat';
+  }
+
+ .body {
+  box-sizing: border-box;
+} 
+
+.first-set {
+  margin: 0 260px;
 }
 
 .body_image {
   background-image: url("../images/bg_dandelions.png");
-  position: absolute;
   width: 790px;
   height: 697px;
-  left: 85px;
 }
 
 .choice-product {
   position: absolute;
   width: 846px;
   height: 78px;
-  left: 217px;
-  top: 220px;
+  left: 417px;
+  margin-top: 220px;
   font-weight: 400;
   font-size: 70px;
   line-height: 70px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   color: #515076;
 }
 
 .product-cart-wrapper {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 1110px;
-  height: 1191px;
   gap: 35px;
-  margin-top: 440px;
+  margin: -300px 260px 0;
+
 }
 
 .product-cart {
@@ -131,4 +134,187 @@
 #recolor-button.aqua-color-button{
   background-color: #00ffff;
   color: #000000;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 1728px;
+  height: 477px;
+}
+
+.info-block {
+  display: inline-block;
+  color: white;
+  margin: 84px auto auto 85px;
+  max-width: 409px;
+  width: 100%;
+  }
+
+.footer__label {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.footer__description {
+  width: 409px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 50px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+.social-links {
+display: inline-flex;
+justify-content: flex-start;
+gap: 30px; 
+margin-top: 10px;
+}
+
+.subscribe-form {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  bottom: 115px;
+  left: 175px;
+  max-width: 415px;
+  width: 100%;
+  gap: 10px;
+}
+
+.footer-subscribe-text{
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: 58px ;
+}
+
+.footer-subscribe {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 16px 15px;
+  background: white;
+  border-radius: 8px;
+}
+
+#user-email {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.subscribe {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.navigation-block {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  bottom: 130px;
+  left: 550px;
+  max-width: 200px;
+  width: 100%;
+  gap: 10px;
+
+
+}
+
+.navigation-title {
+  font-size: 20px;
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+.footer-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  font-size: 18px;
+  padding-left: 1px;
+}
+
+.footer-menu-link {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  position: relative;
+  display:inline-flex;
+  flex-direction: column;
+  left: -625px;
+  top: 150px;
+  color: white;
+  gap: 20px;
+}
+
+.line-image {
+  align-self:center;
+  max-width: 100%;
+}
+
+.copyright-text {
+  font-size: 18px;
+}
+
+.modal {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#0000006f;
+  position:fixed;
+  z-index: 1000;
+}
+
+.modal-show {
+  display: flex;
+}
+
+.modal-form {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  background-color:#fef8f8;
+}
+
+.close-button {
+  position:absolute;
+  right:1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.registration {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 30px;
 }
