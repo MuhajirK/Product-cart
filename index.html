@@ -37,11 +37,11 @@
       </div>
     </div>
   </template>
-  <div class="modal">
-    <div class="modal-form">
-      <button class="close-button">x</button>
+  <div class="modal" id = "modal">
+    <div class="modal-form" id = "modal-form">
+      <button class="close-button" id="close-button">x</button>
       <h4 class="registration">Регистрация</h4>
-      <form class="registration-form">
+      <form class="registration-form" id = "registration-form">
         <label for="user-name">Имя:</label>
         <input type="text" id="user-name" name="user-name" placeholder="Введите имя" required>
         <label for="user-surname">Фамилия:</label>
@@ -53,7 +53,7 @@
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" required>
         <label for="confirm-password">Подтвердите пароль:</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль"required>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль" required>
         <button type="submit">Зарегистрироваться</button>
       </form>
     </div>
@@ -67,7 +67,7 @@
         <img src="/images/vk-icon.png" alt="vk-icon">
       </div>
     </div>
-    <form class="subscribe-form">
+    <form class="subscribe-form" id = "subscribe-form">
       <label for="user-email" class="footer-subscribe-text">Подпишись на наши акции:</label>
       <div class="footer-subscribe">
         <input type="email" name="email" id="user-email" placeholder="Введи Email..." required>
@@ -96,12 +96,6 @@
       <p class="copyright-text"> www.product-cards.com©all right reserve </p>
     </div>
   </footer>
-
-  <script src = "homework-9.js"></script>
-  <script src = "homework-5.js"></script>
-  <script src = "homework-6.js"></script>
-  <script src = "homework-7.js" type = module></script>
-  <script src = "homework-8.js" type = module></script>
-  <script src = "./script.js"></script>
+  <script type="Module" src = "main.js"></script> 
 </body>
 </html>

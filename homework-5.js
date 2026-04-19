@@ -4,7 +4,7 @@
 const getTemperature = (cityName, cityTemperature) => {
   return `Сейчас в ${cityName} температура  — ${cityTemperature} градусов по Цельсию`; 
 }
-result = getTemperature('Москва', 10);
+const result = getTemperature('Москва', 10);
 console.log(result);
 
 
