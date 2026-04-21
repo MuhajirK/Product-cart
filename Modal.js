@@ -18,9 +18,9 @@ export class Modal {
     this.modalID.style.display = 'none';
   };
 
-  closeModalByCloseIcon(){
-    this.closeButtonID.addEventlistener('click', () => {
-      this.closeModalForm();
-    })
-  }
+  closeModalByCloseIcon() {
+      this.closeButtonID.addEventListener('click', () => {
+      this.closeModal();
+    });
+  };
 };

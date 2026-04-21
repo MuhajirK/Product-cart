@@ -63,12 +63,7 @@ const modal = new Modal(modalWindow, closeBtn);
 registrationBtn.addEventListener('click', ()=> {
   modal.openModal();
 });
-
-closeBtn.addEventListener('click', ()=> {
-  if (modal.isModalFormOpen){
-    modal.closeModal();
-  }
-});
+modal.closeModalByCloseIcon();
 
 const registrationForm = new Form("registration-form");
 registrationForm.form.addEventListener('submit', (event) => {
