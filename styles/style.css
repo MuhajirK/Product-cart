@@ -284,10 +284,6 @@ margin-top: 10px;
   z-index: 1000;
 }
 
-.modal-show {
-  display: flex;
-}
-
 .modal-form {
   position:fixed;
   top: 50%;
