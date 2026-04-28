@@ -13,11 +13,11 @@
   <div class = "first-set">
     <div class="body_image">
       <div class = "buttons">
-          <button id="recolor-first-cart-button">Перекрасить первую карточку</button>
-          <button id="recolor-all-carts-button">Перекрасить все карточки</button>
-          <button id="open-google-button">Перейти на Google</button>
-          <button id="recolor-button">Перекрасить кнопку</button>
-          <button id="registration-button">Регистрация</button>
+        <button id="recolor-first-cart-button">Перекрасить первую карточку</button>
+        <button id="recolor-all-carts-button">Перекрасить все карточки</button>
+        <button id="open-google-button">Перейти на Google</button>
+        <button id="recolor-button">Перекрасить кнопку</button>
+        <button id="registration-button">Регистрация</button>
       </div>
       <span class="choice-product"> Выбери свой продукт </span>
     </div>
@@ -37,26 +37,25 @@
       </div>
     </div>
   </template>
-  <div class="modal" id = "modal">
-    <div class="modal-form" id = "modal-form">
-      <button class="close-button" id="close-button">x</button>
-      <h4 class="registration">Регистрация</h4>
-      <form class="registration-form" id = "registration-form">
-        <label for="user-name">Имя:</label>
-        <input type="text" id="user-name" name="user-name" placeholder="Введите имя" required>
-        <label for="user-surname">Фамилия:</label>
-        <input type="text" id="user-surname" name="user-surname" placeholder="Введите фамилию" required>
-        <label for="birth-date">Дата рождения:</label>
-        <input type="date" id="birth-date" name="birth-date" required>
-        <label for="login">Логин:</label>
-        <input type="email" id="login" name="login" placeholder="Введите логин" required>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" required>
-        <label for="confirm-password">Подтвердите пароль:</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль" required>
-        <button type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+  <div class="overlay" id = "overlay"></div>
+  <div class="modal-form" id = "modal-form">
+    <button class="close-button" id="close-button">x</button>
+    <h4 class="registration">Регистрация</h4>
+    <form class="registration-form" id = "registration-form">
+      <label for="user-name">Имя:</label>
+      <input type="text" id="user-name" name="user-name" placeholder="Введите имя" required>
+      <label for="user-surname">Фамилия:</label>
+      <input type="text" id="user-surname" name="user-surname" placeholder="Введите фамилию" required>
+      <label for="birth-date">Дата рождения:</label>
+      <input type="date" id="birth-date" name="birth-date" required>
+      <label for="login">Логин:</label>
+      <input type="email" id="login" name="login" placeholder="Введите логин" required>
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" required>
+      <label for="confirm-password">Подтвердите пароль:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Подтвердите пароль" required>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
   </div>
   <footer>
     <div class="info-block">

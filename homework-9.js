@@ -52,18 +52,11 @@ emailForm.form.addEventListener('submit', (event) => {
   emailForm.resetFormData();
 });
 
-const modalWindow = document.getElementById("modal");
-const registrationBtn = document.getElementById("registration-button");
-const closeBtn = document.getElementById("close-button");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 let user;
 
-const modal = new Modal(modalWindow, closeBtn);
-registrationBtn.addEventListener('click', ()=> {
-  modal.openModal();
-});
-modal.closeModalByCloseIcon();
+const modal = new Modal('modal-form','overlay','registration-button',true);
 
 const registrationForm = new Form("registration-form");
 registrationForm.form.addEventListener('submit', (event) => {

@@ -166,10 +166,10 @@ footer {
 }
 
 .social-links {
-display: inline-flex;
-justify-content: flex-start;
-gap: 30px; 
-margin-top: 10px;
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 30px; 
+  margin-top: 10px;
 }
 
 .subscribe-form {
@@ -258,7 +258,7 @@ margin-top: 10px;
   position: relative;
   display:inline-flex;
   flex-direction: column;
-  left: -625px;
+  left: -425px;
   top: 150px;
   color: white;
   gap: 20px;
@@ -273,24 +273,33 @@ margin-top: 10px;
   font-size: 18px;
 }
 
-.modal {
+.overlay {
   display: none;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
-  background-color:#0000006f;
   position:fixed;
-  z-index: 1000;
+  background-color:#0000006f;
+}
+
+.overlay-showed {
+  display:flex;
 }
 
 .modal-form {
-  position:fixed;
+  display: none;
+  position:absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 400px;
   background-color:#fef8f8;
+  z-index: 1000
+}
+
+.modal-form-showed {
+  display:block;
 }
 
 .close-button {
@@ -300,6 +309,7 @@ margin-top: 10px;
   background: none;
   cursor: pointer;
   font-size: 16px;
+  padding: 10px;
 }
 
 .registration-form {
