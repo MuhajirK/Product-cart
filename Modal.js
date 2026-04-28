@@ -2,13 +2,14 @@
 // ДЗ 12 Исправление кода, переиспользование кнопки для закрытия.
 
 export class Modal {
-  constructor(modalId, buttonId, shouldCloseOnOverlay) {
+  constructor(modalId, overlay, buttonId, shouldCloseOnOverlay) {
     this.modal = document.getElementById(modalId);
     this.openButton = document.getElementById(buttonId);
-    this.overlay = document.getElementById('overlay');
+    this.overlay = document.getElementById(overlay);
     this.shouldCloseOnOverlay = shouldCloseOnOverlay;
     this.#initOpen();
     this.#closeModalByCloseButton();
+    console.log(this.overlay);
   };
 
   isModalFormOpen() {

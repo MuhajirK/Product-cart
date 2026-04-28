@@ -56,7 +56,7 @@ const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 let user;
 
-const modal = new Modal('modal-form','registration-button',true);
+const modal = new Modal('modal-form','overlay','registration-button',true);
 
 const registrationForm = new Form("registration-form");
 registrationForm.form.addEventListener('submit', (event) => {
