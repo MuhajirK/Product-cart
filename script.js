@@ -46,3 +46,6 @@ const recolorButton = document.getElementById('recolor-button');
 recolorButton.addEventListener('click', () => {
   recolorButton.classList.toggle('aqua-color-button');
 });
+
+const asyncHtml = document.getElementById('open-async-html');
+asyncHtml.addEventListener('click', () => window.open("./async/async.html"));

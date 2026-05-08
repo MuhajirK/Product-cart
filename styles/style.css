@@ -6,6 +6,16 @@
   box-sizing: border-box;
 } 
 
+.body-async {
+  margin : 0 auto;
+  padding : 0;
+  display : flex;
+  justify-content : center;
+  flex-wrap : wrap;
+  align-items : center;
+  min-height : 100vh;
+}
+
 .first-set {
   margin: 0 260px;
 }
@@ -114,7 +124,8 @@
 
 .buttons {
   position: absolute;
-  margin-right: 0;
+  left: 10px;
+  top: 10px;
   display:flex;
   gap: 5px;
 }
@@ -289,7 +300,7 @@ footer {
 
 .modal-form {
   display: none;
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -299,11 +310,11 @@ footer {
 }
 
 .modal-form-showed {
-  display:block;
+  display: block;
 }
 
 .close-button {
-  position:absolute;
+  position: absolute;
   right:1px;
   border: none;
   background: none;
@@ -323,4 +334,86 @@ footer {
   display: inline-block;
   margin-left: 20px;
   margin-top: 30px;
+}
+
+.data-loading {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 24px;
+  color: #001eff;
+  background-color: #edd3d3;
+  border-radius: 10px;
+  font-weight: bold;
+
+}
+.remove-from-local-storage {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.remove-all-cards {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.remove-card {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.get-cards {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.user-cards-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+
+.user-card {
+  gap: 15px;
+  padding: 20px;
+  background: #d9d9e09f;
+  box-shadow: 2px 2px 10px rgba(81, 80, 118, 0.1);
+  border-radius: 5px;
+}  
+
+.user-id {
+  padding-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.user-name {
+  padding-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.user-surname {
+ padding-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.user-age{
+  padding-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.user-email{
+  padding-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #001eff;
+  font-style: italic;
 }
