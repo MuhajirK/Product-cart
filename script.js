@@ -27,13 +27,12 @@ openGoogleButton.addEventListener('click', openGoogle);
 // Объявление функции для переходана сайт Google
 function openGoogle() {
   const answer = confirm('Вы действительно хотите перейти на сайт Google?');
-
   if (answer) {
     window.open("https://Google.com");
   } else {
     console.log('Пользователь отменил переход на сайт Google');
-  }
-}
+  };
+};
 
 // Вывод текста контента в косоль
 const textTitle = document.querySelector('.choice-product');
@@ -46,6 +45,3 @@ const recolorButton = document.getElementById('recolor-button');
 recolorButton.addEventListener('click', () => {
   recolorButton.classList.toggle('aqua-color-button');
 });
-
-const asyncHtml = document.getElementById('open-async-html');
-asyncHtml.addEventListener('click', () => window.open("./async/async.html"));

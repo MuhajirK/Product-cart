@@ -1,24 +1,35 @@
-
+// ДЗ 13. 
 const STORAGE_KEY = 'usersData';
 const usersContainer = document.querySelector('.user-cards-wrapper');
 const usersTemplate = document.getElementById('user-cards-template');
+const removeAllCardsBtn = document.getElementById('remove-all-cards');
+const removeCardBtn = document.getElementById('remove-card');
+const getCardsBtn = document.getElementById('get-cards');
 
-function updateStatus() {
-  const statusElement = document.getElementById('status-message');
-  if (statusElement) {
-    if (statusElement.style.display === 'none') {
-      statusElement.style.display = 'inline-block';
-    }
-  }
-}
+removeAllCardsBtn.addEventListener('click', () => {
+  removeAllUserCards();
+});
 
-function getLoadElement(display){
+removeCardBtn.addEventListener('click', () => {
+  removeUserCard();
+});
+
+getCardsBtn.addEventListener('click', () => {
+  getUserCards();
+});
+
+function setLoadDisplayStyle(display){
   const statusElement = document.getElementById('status-message');
   statusElement.style.display = display;
 };
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+
+// Заполнение карточек пользователей
+
 async function renderUsers(users) {
-  getLoadElement('none');
+  setLoadDisplayStyle('none');
   users.forEach(user => {
     const userClone = usersTemplate.content.cloneNode(true);
     userClone.querySelector('.user-id').textContent = `id: ${user.id}`; 
@@ -29,6 +40,9 @@ async function renderUsers(users) {
     usersContainer.appendChild(userClone);
   });
 };
+
+
+// Проверка данных в localStorage и вывод данных с задержкой
 
 async function checkAndLoadData() {
   const storedData = localStorage.getItem(STORAGE_KEY);
@@ -42,17 +56,14 @@ async function checkAndLoadData() {
 
     try {
 
-      const promise = await new Promise(resolve => {
-        setTimeout(resolve, 2000);
-      });
+      await delay(1500);
 
       const response = await fetch('users-data.json');
       if (!response.ok) {
         throw new Error(`Ошибка HTTP: ${response.status}`);
       };
 
-      const data = await response.json();
-      const users = data.users;
+      const users = await response.json();
       
       localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
       console.log('Данные сохранены в localStorage');
@@ -60,7 +71,7 @@ async function checkAndLoadData() {
       renderUsers(users);
 
     } catch (error) {
-        console.error('Ошибка при загрузке данных:', error);
+        console.log('Ошибка при загрузке данных:', error);
     };
   };
 };
@@ -69,57 +80,38 @@ document.addEventListener('DOMContentLoaded', () => {
   checkAndLoadData();
 });
 
-const removeAllCardsBtn = document.getElementById('remove-all-cards');
-removeAllCardsBtn.addEventListener('click', () => {
-  removeAllUserCards();
-});
-
-const removeCardBtn = document.getElementById('remove-card');
-removeCardBtn.addEventListener('click', () => {
-  removeUserCard();
-});
-
-const getCardsBtn = document.getElementById('get-cards');
-getCardsBtn.addEventListener('click', () => {
-  getUserCards();
-});
-
 function getUsersCardCount() {
   const cards = usersContainer.getElementsByClassName('user-card');
   return cards.length;
 };
 
-function getUserCardCnt() {
+function getInputCardCnt() {
   let userInput = prompt('Выберите номер карточки пользователя');
-  let cardCount = Number(userInput);
-  let usersCardCnt = getUsersCardCount();
-  if (isNaN(cardCount) || cardCount > usersCardCnt || cardCount <= 0) {
+  let cardNumber = Number(userInput);
+  if (isNaN(cardCount) || cardNumber > getUsersCardCount() || cardNumber <= 0) {
     alert('Карточки пользователя под таким номером не существует, повторите ввод');
   };
   return cardCount;
 };
 
 function removeAllUserCards() {
-  if (!usersContainer) {
-    console.error('Контейнер для карточек пользователей не найден');
-    return;
-  };
-
-  const cards = usersContainer.getElementsByClassName('user-card');
-  [...cards].forEach(card => card.remove());
-
-  localStorage.removeItem(STORAGE_KEY);
-  console.log('Все карточки пользователей удалены, данные из localStorage очищены');
+  removeUserCardsfromDisplay();
+  clearLocalSorage();
 };
 
-function removeUserCardsFromDisplay() {
+function removeUserCardsfromDisplay() {
   if (!usersContainer) {
-    console.error('Контейнер для карточек пользователей не найден');
+    console.log('Контейнер для карточек пользователей не найден');
     return;
   };
 
   const cards = usersContainer.getElementsByClassName('user-card');
   [...cards].forEach(card => card.remove());
+};
+
+function clearLocalSorage(){ 
+  localStorage.removeItem(STORAGE_KEY);
+  console.log('Все карточки пользователей удалены, данные из localStorage очищены');
 };
 
 async function removeUserCard() {
@@ -129,20 +121,12 @@ async function removeUserCard() {
   };
 
   const cards = [...usersContainer.getElementsByClassName('user-card')];
-  const choisedCard = cards[getUserCardCnt()-1];
+  const choisedCard = cards[getInputCardCnt()-1];
   const idElement = choisedCard.querySelector('.user-id');
-  const idValueToRemove = idElement.textContent.replace('id: ', '').trim();
-  const idValueToRemoveNum = Number(idValueToRemove);
+  const idValueToRemoveNum = Number(idElement.textContent.replace('id: ', '').trim());
   
   console.log('Карточка удаляется...')
-  choisedCard.classList.add('removing');
-  choisedCard.style.opacity = '0.5';
-  choisedCard.style.transform = 'scale(0.95)';
-  
-  const promise = await new Promise(resolve => {
-    setTimeout(resolve, 1500);
-  });
-  
+  await delay(1000);
   await choisedCard.remove();
   
   try {
@@ -157,7 +141,7 @@ async function removeUserCard() {
 };
 
 function getUserCards(){
-  removeUserCardsFromDisplay();
-  getLoadElement('block');
+  removeUserCardsfromDisplay();
+  setLoadDisplayStyle('block');
   checkAndLoadData();
 };
