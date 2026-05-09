@@ -88,55 +88,65 @@ function getUsersCardCount() {
 function getInputCardCnt() {
   let userInput = prompt('Выберите номер карточки пользователя');
   let cardNumber = Number(userInput);
-  if (isNaN(cardCount) || cardNumber > getUsersCardCount() || cardNumber <= 0) {
+  if (isNaN(cardNumber) || cardNumber > getUsersCardCount() || cardNumber <= 0) {
     alert('Карточки пользователя под таким номером не существует, повторите ввод');
+    return null;
   };
-  return cardCount;
+  return cardNumber;
 };
 
 function removeAllUserCards() {
+  if (getUsersCardCount() > 0){
   removeUserCardsfromDisplay();
-  clearLocalSorage();
+  clearLocalStorage();
+  }
+  else{
+    console.log('Карточек пользователей не обнаружено');
+  };
 };
 
 function removeUserCardsfromDisplay() {
-  if (!usersContainer) {
-    console.log('Контейнер для карточек пользователей не найден');
-    return;
+  if (getUsersCardCount() > 0){
+    if (!usersContainer) {
+      console.log('Контейнеры для карточек пользователей не найден');
+      return;
+    };
+    const cards = usersContainer.getElementsByClassName('user-card');
+    [...cards].forEach(card => card.remove());
   };
-
-  const cards = usersContainer.getElementsByClassName('user-card');
-  [...cards].forEach(card => card.remove());
 };
 
-function clearLocalSorage(){ 
+function clearLocalStorage(){ 
   localStorage.removeItem(STORAGE_KEY);
   console.log('Все карточки пользователей удалены, данные из localStorage очищены');
 };
 
-async function removeUserCard() {
+async function removeUserCard(){
   if (!usersContainer) {
     console.error('Контейнер для карточек пользователей не найден');
     return;
   };
-
+  const cardValue = getInputCardCnt();
+  if (cardValue === null){
+    console.error('Контейнер для карточек пользователей не найден');
+    return;
+  }; 
   const cards = [...usersContainer.getElementsByClassName('user-card')];
-  const choisedCard = cards[getInputCardCnt()-1];
+  const choisedCard = cards[cardValue-1];
   const idElement = choisedCard.querySelector('.user-id');
   const idValueToRemoveNum = Number(idElement.textContent.replace('id: ', '').trim());
-  
-  console.log('Карточка удаляется...')
+  console.log('Карточка удаляется...');
   await delay(1000);
-  await choisedCard.remove();
+  choisedCard.remove();
   
   try {
     const storedData = localStorage.getItem(STORAGE_KEY);
-    const users = await JSON.parse(storedData);
+    const users = JSON.parse(storedData);
     const updatedUsers = users.filter(user => user.id !== idValueToRemoveNum);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedUsers));
     console.log('localStorage обновлён: пользователь с ID', idValueToRemoveNum, 'удален');
   } catch (error) {
-    console.log('Ошибка при обновлении localStorage:', error);
+    console.error('Ошибка при обновлении localStorage:', error);
   };
 };
 
